@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A curated, responsive photography gallery built with HTML, CSS, and JavaScript." />
+  <meta name="theme-color" content="#0b0c10" />
+  <title>FRAME — Photography Gallery</title>
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Frame home">
+        <span class="brand-mark">F</span>
+        <span>FRAME<span class="brand-period">.</span></span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a class="nav-link active" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#about">About</a>
+      </nav>
+      <a class="top-cta" href="#gallery">Explore collection <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A VISUAL JOURNAL</p>
+          <h1 id="hero-title">Moments worth<br /><em>remembering.</em></h1>
+          <p class="hero-description">A curated collection of places, details, and fleeting moments from around the world.</p>
+          <a class="hero-link" href="#gallery">Discover the gallery <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Sunlit mountain landscape">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Mountain peaks rising into the clouds" />
+          <div class="hero-art-overlay"></div>
+          <div class="hero-image-label"><span>01 / LANDSCAPE</span><span>46° 51' N — 9° 31' E</span></div>
+          <div class="hero-side-note">COLLECTED LIGHT · VOL. 01</div>
+        </div>
+        <div class="hero-index"><span>SCROLL TO EXPLORE</span><span class="index-line"></span><span>2026</span></div>
+      </section>
+
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> THE COLLECTION</p>
+            <h2 id="gallery-title">Find your <em>perspective.</em></h2>
+          </div>
+          <p class="collection-count"><span id="visible-count">12</span> photographs <span class="count-dot">●</span> Curated selection</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="filter-list" role="group" aria-label="Filter photos by category">
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All works <span>12</span></button>
+            <button class="filter-button" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+            <button class="filter-button" type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+            <button class="filter-button" type="button" data-filter="travel" aria-pressed="false">Travel</button>
+            <button class="filter-button" type="button" data-filter="details" aria-pressed="false">Details</button>
+          </div>
+          <div class="gallery-tools">
+            <label class="search-box">
+              <span class="sr-only">Search photographs</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+              <input id="search-input" type="search" placeholder="Search collection" autocomplete="off" />
+            </label>
+            <button id="view-toggle" class="icon-button" type="button" aria-label="Toggle compact gallery view" title="Toggle gallery layout">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+          <!-- Cards are rendered by script.js from the photo data below. -->
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span class="empty-icon">⌕</span>
+          <h3>No photographs found</h3>
+          <p>Try another search or choose a different category.</p>
+          <button id="reset-filters" class="text-button" type="button">Reset filters ↗</button>
+        </div>
+        <div class="gallery-bottom">
+          <span>END OF CURRENT COLLECTION</span>
+          <span class="bottom-mark">F<span>.</span></span>
+          <span>MORE MOMENTS TO COME</span>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-symbol">F<span>.</span></div>
+        <div class="about-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> BEHIND THE FRAME</p>
+          <h2>Every image holds<br />a <em>different world.</em></h2>
+          <p>FRAME is a small visual journal celebrating the extraordinary in the everyday — from dramatic landscapes to thoughtful design and the beauty of getting lost somewhere new.</p>
+        </div>
+        <div class="about-note"><span>DESIGNED WITH INTENTION</span><span>BUILT FOR THE CURIOUS</span><span>© 2026 FRAME JOURNAL</span></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand" href="#"><span class="brand-mark">F</span><span>FRAME<span class="brand-period">.</span></span></a>
+      <p>A little corner of the internet for beautiful things.</p>
+      <a href="#gallery" class="back-top">Back to top ↑</a>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photograph viewer">×</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photograph">‹</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-wrap"><img id="lightbox-image" src="" alt="" /></div>
+      <div class="lightbox-caption">
+        <div><p id="lightbox-category" class="lightbox-category"></p><h2 id="lightbox-title"></h2><p id="lightbox-description"></p></div>
+        <div class="lightbox-counter"><span id="lightbox-current">01</span><span class="counter-divider"></span><span id="lightbox-total">12</span></div>
+      </div>
+    </div>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next photograph">›</button>
+    <p class="lightbox-hint">USE ← → TO NAVIGATE <span>·</span> ESC TO CLOSE</p>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
